@@ -27,11 +27,20 @@ const findLongestWord = (str) => {
     // - if you want decending order then used following way
     return b.length - a.length 
   });
-  console.log(words); // return result based on the sort() method
+
+  // First approach :
+//   console.log(words); // return result based on the sort() method
   // use the .at() method on strings to access characters by index, including negative indexing, which allows you to retrieve characters starting from the end of the string.
-  return word.at(0);// 
+//   return word.at(0);// 
 //   also done using 
 // return word [0]
+
+
+// 2nd approach using reduce method :
+return words.reduce((acuumulator, currentValue)=>{
+return acuumulator.length > currentValue.length ? acuumulator : currentValue
+})
+
 };
 
 // call function
@@ -39,5 +48,3 @@ console.log(findLongestWord("Hi my name is vishal shinde at post junnar"));
 
 // ================================================================================================================================================================================
 
-// solution 2 
-// using reduce method
